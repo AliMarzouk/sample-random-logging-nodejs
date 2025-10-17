@@ -45,7 +45,7 @@ function getRandomMessage() {
 function logNext() {
   const level = levels[levelIndex % levels.length];
   const message = getRandomMessage();
-  const meta = { service: 'sample-logger', iteration: levelIndex };
+  const meta = { service: process.env.SERVICE_NAME, iteration: levelIndex };
 
   if (level === 'error') {
     // Include an Error instance to ensure stack and error fields are present
